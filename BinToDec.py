@@ -1,5 +1,4 @@
 #--conding:utf-8--
-import math
 import os
 import regex
 
@@ -9,9 +8,8 @@ os.system("cls")
 print("Input a binary number:")
 strLine = input()
 nStrLen = len(strLine)
-oMatches = regex.findall("[0-1]",strLine)
-nMathes = len(oMatches)
-bRightString = (nStrLen == nMathes)
+oMatches = regex.fullmatch("^[0-1]+$",strLine)
+bRightString = (nStrLen < 32 and not oMatches is None)
 if(not bRightString):
     print("Wrong binary number format!!!")
     exit(0)
