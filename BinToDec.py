@@ -12,7 +12,7 @@ strLine = input()
 nStrLen = len(strLine)
 nMaxBinLen = math.ceil(math.log(MAX_INT, 2))
 oMatches = regex.fullmatch("^[0-1]+$", strLine)
-bRightString = (nStrLen < nMaxBinLen and oMatches is not None)
+bRightString = (nStrLen <= nMaxBinLen and oMatches is not None)
 if (not bRightString):
     print("Wrong binary number format!!!")
     exit(0)
